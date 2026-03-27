@@ -10,13 +10,16 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            cmd: npm run dist:win
+            cmd: npx electron-builder --win --publish never
             artifact: dist/*.exe
           - os: ubuntu-latest
-            cmd: npm run dist:linux
-            artifact: dist/*.AppImage
+            cmd: npx electron-builder --linux --publish never
+            artifact: |
+              dist/*.AppImage
+              dist/*.deb
+              dist/*.pacman
           - os: macos-latest
-            cmd: npm run dist:mac
+            cmd: npx electron-builder --mac --publish never
             artifact: dist/*.dmg
     runs-on: ${{ matrix.os }}
     steps:

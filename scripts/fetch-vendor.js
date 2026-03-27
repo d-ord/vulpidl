@@ -42,13 +42,17 @@ if (platform === 'win32') {
   fs.chmodSync(path.join(vendorDir, 'yt-dlp'), 0o755);
 
   console.log('downloading ffmpeg...');
-  const tarPath = path.join(vendorDir, 'ffmpeg.tar.xz');
-  const archSuffix = process.arch === 'arm64' ? 'arm64' : '64';
-  const ffName = `ffmpeg-master-latest-macOS${archSuffix}-lgpl`;
-  execSync(`curl -L -o "${tarPath}" "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/${ffName}.tar.xz"`, { stdio: 'inherit' });
-  execSync(`tar -xf "${tarPath}" -C "${vendorDir}" --strip-components=2 "${ffName}/bin/ffmpeg" "${ffName}/bin/ffprobe"`, { stdio: 'inherit' });
-  fs.unlinkSync(tarPath);
+  const zipPath = path.join(vendorDir, 'ffmpeg.zip');
+  execSync(`curl -L -o "${zipPath}" "https://evermeet.cx/ffmpeg/getrelease/zip"`, { stdio: 'inherit' });
+  execSync(`unzip -o "${zipPath}" -d "${vendorDir}"`, { stdio: 'inherit' });
+  fs.unlinkSync(zipPath);
   fs.chmodSync(path.join(vendorDir, 'ffmpeg'), 0o755);
+
+  console.log('downloading ffprobe...');
+  const zipPath2 = path.join(vendorDir, 'ffprobe.zip');
+  execSync(`curl -L -o "${zipPath2}" "https://evermeet.cx/ffmpeg/getrelease/ffprobe/zip"`, { stdio: 'inherit' });
+  execSync(`unzip -o "${zipPath2}" -d "${vendorDir}"`, { stdio: 'inherit' });
+  fs.unlinkSync(zipPath2);
   fs.chmodSync(path.join(vendorDir, 'ffprobe'), 0o755);
 }
 

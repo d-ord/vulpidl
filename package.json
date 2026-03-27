@@ -12,7 +12,10 @@
     "dist:mac": "electron-builder --mac",
     "dist:linux": "electron-builder --linux"
   },
-  "author": "dord",
+  "author": {
+    "name": "dord",
+    "email": "dord@dord.cat"
+  },
   "license": "MIT",
   "devDependencies": {
     "electron": "^35.0.0",
