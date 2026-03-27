@@ -1,0 +1,101 @@
+{
+  "name": "vulpidl",
+  "version": "1.0.0",
+  "description": "sample grabber and modification tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "setup": "node scripts/fetch-vendor.js",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "author": "dord",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.8.1",
+    "rcedit": "^4.0.1"
+  },
+  "build": {
+    "appId": "cat.dord.vulpidl",
+    "afterPack": "./scripts/afterPack.js",
+    "productName": "VulpiDL",
+    "files": [
+      "main.js",
+      "renderer.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "icon.ico",
+      "icon.png",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "vendor/",
+        "to": "vendor/",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "installerHeaderIcon": "icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "VulpiDL",
+      "deleteAppDataOnUninstall": true,
+      "include": "installer.nsh"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.png",
+      "category": "public.app-category.music"
+    },
+    "dmg": {
+      "window": {
+        "width": 400,
+        "height": 500
+      }
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "pacman"
+      ],
+      "icon": "build/icons",
+      "category": "Audio",
+      "desktop": {
+        "entry": {
+          "Name": "VulpiDL",
+          "Comment": "Sample grabber and modification tool",
+          "Categories": "Audio;Music;AudioVideo",
+          "MimeType": "x-scheme-handler/vulpidl"
+        }
+      },
+      "mimeTypes": [
+        "x-scheme-handler/vulpidl"
+      ]
+    },
+    "protocols": {
+      "name": "VulpiDL URL",
+      "schemes": [
+        "vulpidl"
+      ]
+    }
+  }
+}

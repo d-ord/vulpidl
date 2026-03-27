@@ -1,0 +1,9 @@
+node_modules/
+dist/
+vendor/
+*.lnk
+*.log
+*.txt
+!LICENSE
+.DS_Store
+Thumbs.db

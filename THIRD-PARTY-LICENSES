@@ -1,0 +1,58 @@
+VulpiDL bundles the following third-party software:
+
+yt-dlp
+https://github.com/yt-dlp/yt-dlp
+License: Unlicense (public domain)
+
+---
+
+This is free and unencumbered software released into the public domain.
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute
+this software, either in source code form or as a compiled binary, for any
+purpose, commercial or non-commercial, and by any means.
+
+---
+
+FFmpeg (ffmpeg, ffprobe)
+https://github.com/BtbN/FFmpeg-Builds
+License: LGPL v2.1+
+Source: https://github.com/BtbN/FFmpeg-Builds
+
+---
+
+FFmpeg is free software licensed under the LGPL v2.1 or later.
+The LGPL build is used, which does not include GPL-only codecs.
+
+This software uses libraries from the FFmpeg project under the LGPLv2.1.
+The complete source code and build scripts are available at:
+https://github.com/BtbN/FFmpeg-Builds
+
+FFmpeg license: https://www.ffmpeg.org/legal.html
+
+Users are responsible for complying with FFmpeg's license when using it.
+
+
+---
+
+Electron
+https://github.com/electron/electron
+License: MIT
+Copyright: GitHub Inc. and Electron contributors
+
+---
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+---
+
+Chromium
+License notices for Chromium and its dependencies are included in the
+application at LICENSES.chromium.html
