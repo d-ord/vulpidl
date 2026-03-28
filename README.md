@@ -37,6 +37,8 @@ grab audio from youtube, search and preview tracks, analyze BPM and key, separat
 
 grab the latest installer from [releases](https://github.com/d-ord/vulpidl/releases). yt-dlp and ffmpeg are bundled, no extra setup needed.
 
+for arch uesrs, you can download the program through the AUR with ```yay -S vulpidl-bin```
+
 for AI stem separation, you also need python and demucs:
 ```
 pip install demucs
