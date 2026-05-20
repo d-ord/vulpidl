@@ -68,6 +68,14 @@ vulpidl registers the `vulpidl://` protocol. browsers and other apps can open li
 vulpidl://youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
+### browser extensions
+
+[chrome](https://chromewebstore.google.com/detail/vulpidl-opener/epjbikbmfcbiaoiiepgeghajipfaalfm)
+
+[firefox](https://addons.mozilla.org/en-US/firefox/addon/vulpidl-opener/)
+
+[source code](https://github.com/d-ord/vulpidl-browser-extensions)
+
 ### license
 
 MIT
